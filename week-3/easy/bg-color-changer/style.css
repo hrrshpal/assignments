@@ -1,0 +1,17 @@
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    color:white;
+}
+
+.color-panel{
+    padding: 20px;
+    background-color: white;
+    margin: 20px 400px;
+    box-shadow: 0px 0px 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap:10px;
+}

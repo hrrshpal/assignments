@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #222;
+}
+
+.app {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #ffcb05;
+  text-shadow: 2px 2px 0 #2a75bb;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #555;
+}
+
+.controls {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 20px;
+  align-items: end;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group input,
+.input-group select {
+  width: 220px;
+  padding: 12px 14px;
+  border: 2px solid #dce3ec;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #2a75bb;
+}
+
+#show-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #2a75bb;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#show-btn:hover {
+  background: #1f5c96;
+  transform: translateY(-2px);
+}
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 24px;
+}
+
+.pokemon-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-6px);
+}
+
+.pokemon-card h2 {
+  text-transform: capitalize;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #2a75bb;
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+
+.pokemon-card p {
+  font-size: 14px;
+  margin: 6px 0;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .controls {
+    align-items: stretch;
+  }
+
+  .input-group input,
+  .input-group select,
+  #show-btn {
+    width: 100%;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+}

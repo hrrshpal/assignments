@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Cards</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="app">
+
+    <section class="hero">
+      <h1>Pokémon Cards</h1>
+      <p>Choose a category and number of Pokémon cards to display.</p>
+    </section>
+
+    <section class="controls">
+      <div class="input-group">
+        <label for="card-count">Number of Cards</label>
+        <input type="number" id="card-count" placeholder="Enter number of cards" min="1" max="50" />
+      </div>
+
+      <div class="input-group">
+        <label for="pokemon-category">Category</label>
+        <select id="pokemon-category">
+          <option value="">Select Category</option>
+          <option value="1-151">Kanto Pokémon</option>
+          <option value="152-251">Johto Pokémon</option>
+          <option value="252-386">Hoenn Pokémon</option>
+          <option value="387-493">Sinnoh Pokémon</option>
+          <option value="494-649">Unova Pokémon</option>
+          <option value="650-721">Kalos Pokémon</option>
+          <option value="722-809">Alola Pokémon</option>
+          <option value="810-905">Galar Pokémon</option>
+        </select>
+      </div>
+
+      <button id="show-btn">Show Pokémon</button>
+    </section>
+
+    <section id="pokemon-container" class="pokemon-container">
+      <!-- Pokémon cards will be rendered here using JavaScript -->
+      <!-- Sample card for UI reference only -->
+      <!--
+      <div class="pokemon-card">
+        <h2>Bulbasaur</h2>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur">
+        <p><strong>Type:</strong> Grass</p>
+        <p><strong>Height:</strong> 7</p>
+        <p><strong>Weight:</strong> 69</p>
+      </div>
+      -->
+    </section>
+
+  </main>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
