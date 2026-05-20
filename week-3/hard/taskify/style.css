@@ -48,7 +48,7 @@ body {
 }
 
 /* Columns */
-.todo,
+.todos,
 .in-progress,
 .under-review,
 .finished {
@@ -63,7 +63,7 @@ body {
     transition: 0.25s ease;
 }
 
-.todo:hover,
+.todos:hover,
 .in-progress:hover,
 .under-review:hover,
 .finished:hover {
@@ -71,7 +71,7 @@ body {
 }
 
 /* Colored top strip */
-.todo::after,
+.todos::after,
 .in-progress::after,
 .under-review::after,
 .finished::after {
@@ -83,7 +83,7 @@ body {
     width: 100%;
 }
 
-.todo::after {
+.todos::after {
     background: linear-gradient(90deg, #ff758c, #ff7eb3);
 }
 
@@ -100,7 +100,7 @@ body {
 }
 
 /* Column headings */
-.todo::before,
+.todos::before,
 .in-progress::before,
 .under-review::before,
 .finished::before {
@@ -112,7 +112,7 @@ body {
     border-bottom: 2px solid #eee;
 }
 
-.todo::before {
+.todos::before {
     content: "🌸 Todo";
     color: #ff5f7e;
 }
@@ -198,4 +198,126 @@ body {
     .all-tasks {
         grid-template-columns: 1fr;
     }
+}
+
+/* Modal background */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 20, 40, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Modal box */
+.modal {
+    width: 420px;
+    max-width: 90%;
+    padding: 28px;
+    border-radius: 24px;
+    background: white;
+    color: #222;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+    animation: popUp 0.25s ease;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #5a4fcf;
+}
+
+/* Inputs */
+.todo-input,
+.description-input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    border: 2px solid #e5e5e5;
+    border-radius: 14px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+.todo-input:focus,
+.description-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+/* Buttons container */
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* Add button */
+.add-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(102, 126, 234, 0.35);
+}
+
+/* Cancel button */
+.close-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background: #f1f3f5;
+    color: #444;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.close-btn:hover {
+    background: #e9ecef;
+}
+
+/* Animation */
+@keyframes popUp {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Task card content */
+
+.task-card{
+    margin-top: 20px;
+}
+
+.task-card h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.task-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
 }
