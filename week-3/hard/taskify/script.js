@@ -1,4 +1,5 @@
 const addNewBtns = document.querySelectorAll(".addNew");
+let dragTask = null;
 
 addNewBtns.forEach(function(addNew) {
     addNew.addEventListener("click", function() {
@@ -71,11 +72,32 @@ addNewBtns.forEach(function(addNew) {
 
             taskCard.appendChild(title);
             taskCard.appendChild(description);
+            taskCard.draggable = true;
+            taskCard.addEventListener("dragstart", function(){
+                dragTask = taskCard
+            })
+            taskCard.addEventListener("dragend", function(){
+                dragTask = null
+            })
 
             addNew.parentElement.appendChild(taskCard);
 
 
             modalOverlay.remove();
         });
+    });
+});
+
+const columns = document.querySelectorAll(".column");
+
+columns.forEach(function(column) {
+    column.addEventListener("dragover", function(e) {
+        e.preventDefault();
+    });
+
+    column.addEventListener("drop", function() {
+        if (dragTask !== null) {
+            column.appendChild(dragTask);
+        }
     });
 });
