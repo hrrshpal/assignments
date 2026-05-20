@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), transparent 25%),
+        linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+/* Header */
+.header {
+    max-width: 850px;
+    margin: 0 auto 45px;
+    text-align: center;
+    padding: 35px 25px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.app-heading {
+    font-size: 52px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.header p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Board */
+.all-tasks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+/* Columns */
+.todo,
+.in-progress,
+.under-review,
+.finished {
+    min-height: 430px;
+    padding: 22px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #222;
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.todo:hover,
+.in-progress:hover,
+.under-review:hover,
+.finished:hover {
+    transform: translateY(-6px);
+}
+
+/* Colored top strip */
+.todo::after,
+.in-progress::after,
+.under-review::after,
+.finished::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 7px;
+    width: 100%;
+}
+
+.todo::after {
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+}
+
+.in-progress::after {
+    background: linear-gradient(90deg, #f7971e, #ffd200);
+}
+
+.under-review::after {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0);
+}
+
+.finished::after {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+/* Column headings */
+.todo::before,
+.in-progress::before,
+.under-review::before,
+.finished::before {
+    display: block;
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #eee;
+}
+
+.todo::before {
+    content: "🌸 Todo";
+    color: #ff5f7e;
+}
+
+.in-progress::before {
+    content: "⚡ In Progress";
+    color: #f59f00;
+}
+
+.under-review::before {
+    content: "🔍 Under Review";
+    color: #7048e8;
+}
+
+.finished::before {
+    content: "✅ Finished";
+    color: #2f9e44;
+}
+
+/* Add New button */
+.addNew {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px dashed #cfcfcf;
+    border-radius: 16px;
+    background: #f8f9fa;
+    color: #555;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.addNew:hover {
+    background: #eef0ff;
+    border-color: #667eea;
+    color: #5a4fcf;
+    transform: translateY(-2px);
+}
+
+/* Future task card style */
+.task-card {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 14px;
+    border-radius: 16px;
+    color: #333;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+    font-weight: 600;
+    cursor: grab;
+    transition: 0.25s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+.task-card:active {
+    cursor: grabbing;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .all-tasks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 20px;
+    }
+
+    .app-heading {
+        font-size: 40px;
+    }
+
+    .header {
+        padding: 28px 20px;
+    }
+
+    .all-tasks {
+        grid-template-columns: 1fr;
+    }
+}
