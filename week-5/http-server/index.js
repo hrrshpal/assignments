@@ -8,26 +8,26 @@ app.get('/', (req, res) => {
 })
 
 app.get('/add', (req, res) => {
-    let a = req.query.a;
-    let b = req.query.b;
+    let a = parseInt(req.query.a);
+    let b = parseInt(req.query.b);
     res.send(`Sum of ${a} and ${b} is ${a+b}`)
 })
 
 app.get('/subtract', (req, res) => {
-    let a = req.query.a;
-    let b = req.query.b;
+    let a = parseInt(req.query.a);
+    let b = parseInt(req.query.b);
     res.send(`Sum of ${a} and ${b} is ${a-b}`)
 })
 
 app.get('/multiply', (req, res) => {
-    let a = req.query.a;
-    let b = req.query.b;
+    let a = parseInt(req.query.a);
+    let b = parseInt(req.query.b);
     res.send(`Sum of ${a} and ${b} is ${a*b}`)
 })
 
 app.get('/divide', (req, res) => {
-    let a = req.query.a;
-    let b = req.query.b;
+    let a = parseInt(req.query.a);
+    let b = parseInt(req.query.b);
     res.send(`Sum of ${a} and ${b} is ${a/b}`)
 })
 
