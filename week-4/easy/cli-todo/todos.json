@@ -1,0 +1,9 @@
+[
+  { "id": 1, "todo": "Do CLI Project", "description": "Finish this project" },
+  {
+    "id": 2,
+    "todo": "finsih project",
+    "description": "finish this easy assignment tonight"
+  },
+  { "id": 3, "todo": "updated todo", "description": "updated description" }
+]
